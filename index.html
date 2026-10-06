@@ -789,6 +789,7 @@
     @media (max-width:1000px) { .hero-image { height:390px; } }
     @media (max-width:760px) { .hero-image { height:345px; } .sample-image { object-position:center top; } }
   </style>
+  <link rel="stylesheet" href="assets/chat.css">
 </head>
 
 <body>
@@ -806,6 +807,7 @@
         <a href="#services">하는 일</a>
         <a href="#examples">콘텐츠 예시</a>
         <a href="#process">작업 과정</a>
+        <a href="#ai-consultation">AI 상담</a>
       </nav>
 
       <a class="nav-cta" href="#prepare">함께할 준비</a>
@@ -1097,6 +1099,54 @@
         </div>
       </div>
     </div>
+    <section id="ai-consultation" class="ai-consultation" aria-labelledby="chat-heading">
+      <div class="wrap">
+        <div class="section-top">
+          <div>
+            <div class="label">06 / AI CONSULTATION</div>
+            <h2 id="chat-heading">우리 가게의 고민,<br>AI와 먼저 이야기해 보세요.</h2>
+          </div>
+          <p>콘텐츠 아이디어부터 인스타그램 운영까지.<br>가게의 상황에 맞는 시작점을 함께 찾아봅니다.</p>
+        </div>
+        <div class="chat-panel">
+          <div class="chat-settings">
+            <label for="gemini-key">나의 Gemini API 키</label>
+            <div class="chat-key-row">
+              <input id="gemini-key" type="password" autocomplete="off" spellcheck="false" placeholder="Gemini API 키를 입력하세요" aria-describedby="key-help">
+              <button id="toggle-key" type="button" aria-controls="gemini-key" aria-pressed="false">키 보기</button>
+              <button id="clear-key" type="button">키 지우기</button>
+            </div>
+            <p id="key-help">키와 대화는 이 페이지에서만 유지되며, 새로고침하면 지워집니다. 전송하면 키와 대화 내용이 Google Gemini API로 전달되며, 해당 키의 사용 요금이 발생할 수 있습니다.</p>
+            <div class="chat-meta">
+              <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio에서 API 키 발급 ↗</a>
+              <span>모델: gemini-3.5-flash-lite</span>
+            </div>
+          </div>
+          <div id="chat-messages" class="chat-messages" role="log" aria-label="AI 상담 대화" aria-live="polite" aria-relevant="additions" tabindex="0">
+            <div class="chat-message assistant"><strong>AI 상담원</strong><p>안녕하세요! 가게의 업종과 지금 가장 고민되는 점을 알려주세요. 콘텐츠 기획, 사진·릴스 아이디어, 계정 운영 방향을 함께 정리해 드릴게요.</p></div>
+          </div>
+          <div class="chat-suggestions" role="group" aria-label="상담 질문 예시">
+            <button type="button" data-chat-prompt="광주에서 카페를 운영하고 있어요. 첫 릴스 아이디어를 추천해 주세요.">카페 릴스 아이디어</button>
+            <button type="button" data-chat-prompt="인스타그램을 처음 시작해요. 프로필과 첫 게시물을 어떻게 준비할까요?">계정 시작하기</button>
+            <button type="button" data-chat-prompt="소상공인을 위한 일주일 인스타그램 콘텐츠 일정을 제안해 주세요.">일주일 콘텐츠 계획</button>
+          </div>
+          <form id="chat-form" class="chat-form">
+            <label for="chat-input">상담 내용</label>
+            <textarea id="chat-input" rows="3" maxlength="4000" placeholder="가게 소개와 고민을 적어주세요." required aria-describedby="chat-help"></textarea>
+            <div class="chat-actions">
+              <p id="chat-help">Enter로 전송 · Shift+Enter로 줄바꿈</p>
+              <div>
+                <button id="reset-chat" type="button">대화 초기화</button>
+                <button id="stop-chat" type="button" hidden>응답 취소</button>
+                <button id="send-chat" class="button" type="submit">상담 보내기</button>
+              </div>
+            </div>
+            <p id="chat-status" role="status" aria-live="polite"></p>
+            <p class="chat-disclaimer">AI의 제안은 참고용입니다. 실제 견적·계약·예약을 확정하거나 성과를 보장하지 않습니다.</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -1236,5 +1286,6 @@
       }
     });
   </script>
+  <script src="assets/chat.js" defer></script>
 </body>
 </html>
