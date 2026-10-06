@@ -12,12 +12,13 @@
 .mission { background: var(--ink); color: white; }
 .mission .label, .mission h2 span { color: var(--accent); }
 .mission h2 { font-size: clamp(38px, 5vw, 62px); line-height: 1.35; }
-.mission-photo { margin: 0; }
-.mission-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 45%; border-radius: 18px; }
+.mission-photo { margin: 0; min-width: 0; }
+.mission-photo img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 18px; }
 .mission-photo figcaption { margin-top: 12px; font-size: 13px; color: var(--on-dark); }
 .mission-copy .mission-lead { color: var(--surface); font-size: 28px; font-weight: 700; line-height: 1.65; margin-bottom: 24px; }
-.mission-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 40px; }
+.mission-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 50px; align-items: center; margin-top: 40px; }
 .mission-lead { font-size: 28px; font-weight: 700; letter-spacing: -1px; margin: 0; }
+.mission-copy { min-width: 0; }
 .mission-copy p { color: var(--on-dark); margin: 0 0 20px; }
 .mission-copy strong { color: white; }
 .mission-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 42px; }
@@ -48,7 +49,7 @@
 @media (min-width: 761px) and (max-width: 1150px) { .nav-cta { display: none; } nav { gap: 16px; } }
 @media (max-width: 760px) {
   .hero-small { line-height: 1.9; }
-  .program-intro, .mission-layout, .regional-project { grid-template-columns: 1fr; gap: 28px; }
+  .program-intro, .mission-layout, .regional-project { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .program-cards, .mission-pillars { grid-template-columns: 1fr; }
   .mission-copy .mission-lead { font-size: 24px; }
   .mission-pillars { gap: 24px; }
