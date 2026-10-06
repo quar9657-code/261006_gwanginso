@@ -778,6 +778,16 @@
       html { scroll-behavior: auto; }
       .button { transition: none; }
     }
+
+    /* Brand visuals: local assets keep the artwork available without external image services. */
+    .hero-image { display:block; width:85%; height:450px; margin-left:15%; object-fit:cover; border:1px solid #ffffff26; border-radius:20px; }
+    .hero-art .note { z-index:1; }
+    .sample-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .sample::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 30%,#101828cc 78%,#101828ed); }
+    .sample-content { position:relative; z-index:1; }
+    .visual-credit { font-size:12px; color:var(--muted); margin:16px 0 0; }
+    @media (max-width:1000px) { .hero-image { height:390px; } }
+    @media (max-width:760px) { .hero-image { height:345px; } .sample-image { object-position:center top; } }
   </style>
 </head>
 
@@ -831,11 +841,7 @@
         </div>
 
         <div class="hero-art">
-          <div class="type-poster">
-            <span>GJ.</span>
-            <strong>발견.<br>기록.<br>연결.</strong>
-            <small>YOUR LOCAL CONTENT PARTNER</small>
-          </div>
+          <img class="hero-image" src="assets/content-studio.webp" alt="스마트폰과 카메라, 커피와 노트로 표현한 콘텐츠 제작 스튜디오 일러스트" width="1024" height="1280" fetchpriority="high" decoding="async">
 
           <div class="note">
             <div class="note-top">RESEARCH NOTE / 01</div>
@@ -957,6 +963,7 @@
 
         <div class="showcase">
           <div class="sample">
+            <img class="sample-image" id="sample-image" src="assets/idea-cafe.svg" alt="커피잔을 표현한 카페 콘텐츠 일러스트" width="800" height="600" loading="lazy" decoding="async">
             <div class="sample-content">
               <div class="sample-kicker" id="sample-kicker">A MOMENT IN OUR TOWN</div>
               <div class="sample-title" id="sample-title">
@@ -984,6 +991,7 @@
 
             <p class="example-note">
               업종별 기획 예시입니다. 실제 제작 방향은 브랜드와 함께 정합니다.
+              이미지는 디자인 일러스트입니다.
             </p>
           </div>
         </div>
@@ -1125,6 +1133,8 @@
     // 업종별 콘텐츠 기획 예시
     const examples = {
       cafe: {
+        image: "assets/idea-cafe.svg",
+        alt: "커피잔을 표현한 카페 콘텐츠 일러스트",
         title: "커피 한 잔에 담긴<br>우리 동네의 오후.",
         kicker: "A MOMENT IN OUR TOWN",
         type: "카페 · 사진 & 릴스",
@@ -1136,6 +1146,8 @@
         format: "메뉴 사진 · 짧은 릴스 · 방문 정보 카드"
       },
       shop: {
+        image: "assets/idea-shop.svg",
+        alt: "정성스럽게 포장한 상품을 표현한 브랜드 콘텐츠 일러스트",
         title: "작은 브랜드의<br>큰 정성을 기록하다.",
         kicker: "MADE WITH CARE",
         type: "소상공인 브랜드 · 이야기 콘텐츠",
@@ -1147,6 +1159,8 @@
         format: "상품 사진 · 제작 과정 릴스 · 브랜드 이야기 카드"
       },
       space: {
+        image: "assets/idea-space.svg",
+        alt: "햇빛이 들어오는 창과 작업대를 표현한 클래스 공간 일러스트",
         title: "새로운 취향이<br>시작되는 곳.",
         kicker: "FIND YOUR NEXT EXPERIENCE",
         type: "공간 & 클래스 · 경험 콘텐츠",
@@ -1162,6 +1176,9 @@
     document.querySelectorAll("[data-example]").forEach((button) => {
       button.addEventListener("click", () => {
         const item = examples[button.dataset.example];
+        const image = document.querySelector("#sample-image");
+        image.src = item.image;
+        image.alt = item.alt;
 
         document.querySelectorAll("[data-example]").forEach((tab) => {
           tab.setAttribute("aria-pressed", String(tab === button));
