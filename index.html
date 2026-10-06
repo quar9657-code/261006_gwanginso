@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>광주 인스타 연구소 — 광주 대표님들의 자립을 돕습니다</title>
   <meta name="description" content="광주 대표님들의 자립을 돕습니다. 무료 컨설팅, 원데이 클래스, 5주 코칭, 콘텐츠 구독 대행으로 내 사업을 직접 알리는 힘을 함께 만듭니다.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101828'/%3E%3Crect x='14' y='14' width='36' height='36' rx='10' fill='none' stroke='%23d4ff5e' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='9' fill='none' stroke='%23d4ff5e' stroke-width='4'/%3E%3Ccircle cx='43' cy='21' r='3' fill='%23d4ff5e'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232d2825'/%3E%3Crect x='14' y='14' width='36' height='36' rx='10' fill='none' stroke='%23cf9775' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='9' fill='none' stroke='%23cf9775' stroke-width='4'/%3E%3Ccircle cx='43' cy='21' r='3' fill='%23cf9775'/%3E%3C/svg%3E">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
 
     :root {
-      --ink: #101828;
-      --muted: #667085;
-      --lime: #d4ff5e;
-      --paper: #f6f7f9;
-      --line: #dce0e7;
+      --ink: #2d2825;
+      --muted: #75695f;
+      --accent: #cf9775;
+      --accent-strong: #925431;
+      --accent-soft: #f0e1d5;
+      --surface: #fffdf9;
+      --on-dark: #d6c9bf;
+      --paper: #f7f3ee;
+      --line: #e4d9ce;
     }
 
     * { box-sizing: border-box; }
@@ -44,7 +48,7 @@
     a:focus-visible,
     button:focus-visible,
     summary:focus-visible {
-      outline: 3px solid #809b2c;
+      outline: 3px solid var(--accent-strong);
       outline-offset: 5px;
     }
 
@@ -57,7 +61,7 @@
     .skip {
       position: absolute;
       top: -80px;
-      background: var(--lime);
+      background: var(--accent);
       padding: 12px;
       z-index: 99;
     }
@@ -65,7 +69,7 @@
     .skip:focus { top: 8px; }
 
     header {
-      background: #f6f7f9f5;
+      background: #f7f3eef5;
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
@@ -113,7 +117,7 @@
       font-weight: 600;
     }
 
-    nav a:hover { color: #677f22; }
+    nav a:hover { color: var(--accent-strong); }
 
     .nav-cta {
       background: var(--ink);
@@ -163,7 +167,7 @@
       background: currentColor;
     }
 
-    .hero .eyebrow { color: var(--lime); }
+    .hero .eyebrow { color: var(--accent); }
 
     h1 {
       font-size: clamp(40px, 4.7vw, 66px);
@@ -173,10 +177,10 @@
       font-weight: 800;
     }
 
-    h1 span { color: var(--lime); }
+    h1 span { color: var(--accent); }
 
     .hero-copy > p {
-      color: #c1c8d3;
+      color: var(--on-dark);
       max-width: 470px;
       line-height: 1.9;
       margin-bottom: 30px;
@@ -188,7 +192,7 @@
       justify-content: center;
       gap: 10px;
       padding: 14px 24px;
-      background: var(--lime);
+      background: var(--accent);
       color: var(--ink);
       border: 0;
       border-radius: 100px;
@@ -201,7 +205,7 @@
 
     .hero-small {
       font-size: 13px;
-      color: #9aa7bb;
+      color: #c6b4a7;
       margin-top: 29px;
     }
 
@@ -216,14 +220,14 @@
       border: 1px solid #ffffff35;
       border-radius: 18px;
       padding: 30px;
-      background: #1a273c;
+      background: #40352e;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .type-poster > span {
-      color: var(--lime);
+      color: var(--accent);
       font-weight: 900;
       font-size: 45px;
       line-height: 1;
@@ -233,13 +237,13 @@
       font-size: 67px;
       line-height: 1.18;
       letter-spacing: -3px;
-      color: #f0f4fb;
+      color: #faf3ed;
     }
 
     .type-poster small {
       font-size: 12px;
       letter-spacing: 1px;
-      color: #c1cad8;
+      color: var(--on-dark);
     }
 
     .note {
@@ -247,7 +251,7 @@
       bottom: 6px;
       left: 0;
       width: 290px;
-      background: var(--lime);
+      background: var(--accent);
       padding: 23px 25px;
       border-radius: 12px;
       transform: rotate(-5deg);
@@ -273,7 +277,7 @@
       display: flex;
       justify-content: space-between;
       font-size: 13px;
-      border-top: 1px solid #10182840;
+      border-top: 1px solid #2d282540;
       padding-top: 12px;
     }
 
@@ -284,12 +288,12 @@
       flex-wrap: wrap;
       gap: 40px;
       padding: 21px;
-      color: #bac4d3;
+      color: var(--on-dark);
       font-size: 13px;
       letter-spacing: 1.5px;
     }
 
-    .ticker span:nth-child(even) { color: var(--lime); }
+    .ticker span:nth-child(even) { color: var(--accent); }
 
     section { padding: 92px 0; }
 
@@ -318,7 +322,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: #61781d;
+      color: var(--accent-strong);
     }
 
     .intro-grid {
@@ -363,14 +367,14 @@
     }
 
     .tag {
-      border: 1px solid #b8c1cc;
+      border: 1px solid var(--line);
       border-radius: 100px;
       padding: 7px 15px;
       font-size: 14px;
     }
 
     .services {
-      background: white;
+      background: var(--surface);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -385,7 +389,7 @@
       padding: 32px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: white;
+      background: var(--surface);
     }
 
     .card-num {
@@ -418,9 +422,9 @@
     }
 
     .card:nth-child(2) p,
-    .card:nth-child(2) .card-num { color: #b9c3d2; }
+    .card:nth-child(2) .card-num { color: var(--on-dark); }
 
-    .card:nth-child(2) ul { color: var(--lime); }
+    .card:nth-child(2) ul { color: var(--accent); }
 
     .examples-top { align-items: center; }
 
@@ -452,7 +456,7 @@
     }
 
     .sample {
-      background: #233f35;
+      background: #614a3b;
       border-radius: 18px;
       overflow: hidden;
       position: relative;
@@ -470,7 +474,7 @@
     .sample-kicker {
       letter-spacing: 3px;
       font-size: 13px;
-      color: var(--lime);
+      color: var(--accent);
     }
 
     .sample-title {
@@ -523,8 +527,8 @@
       margin-top: 25px;
     }
 
-    .process { background: var(--lime); }
-    .process .label { color: #415211; }
+    .process { background: var(--accent); }
+    .process .label { color: var(--accent-strong); }
 
     .steps {
       display: grid;
@@ -534,7 +538,7 @@
     }
 
     .step {
-      border-top: 1px solid #10182855;
+      border-top: 1px solid #2d282555;
       padding-top: 22px;
     }
 
@@ -551,7 +555,7 @@
 
     .step p {
       font-size: 14px;
-      color: #394527;
+      color: #5c4030;
     }
 
     .faq-layout {
@@ -613,10 +617,10 @@
 
     .prepare p {
       font-size: 15px;
-      color: #bbc5d4;
+      color: var(--on-dark);
     }
 
-    .prepare .label { color: var(--lime); }
+    .prepare .label { color: var(--accent); }
 
     .prepare ul {
       list-style: none;
@@ -632,14 +636,14 @@
 
     .prepare li::before {
       content: "✓";
-      color: var(--lime);
+      color: var(--accent);
       margin-right: 12px;
     }
 
     #copy-status {
       min-height: 26px;
       font-size: 14px;
-      color: var(--lime);
+      color: var(--accent);
       margin-top: 12px;
     }
 
@@ -799,7 +803,7 @@
     .hero-image { display:block; width:85%; height:450px; margin-left:15%; object-fit:cover; border:1px solid #ffffff26; border-radius:20px; }
     .hero-art .note { z-index:1; }
     .sample-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .sample::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 30%,#101828cc 78%,#101828ed); }
+    .sample::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 30%,#2d2825cc 78%,#2d2825ed); }
     .sample-content { position:relative; z-index:1; }
     .visual-credit { font-size:12px; color:var(--muted); margin:16px 0 0; }
     @media (max-width:1000px) { .hero-image { height:390px; } }
@@ -859,16 +863,16 @@
             <strong>내 사업의 이야기,<br>내가 알리는 힘.</strong>
             <div class="note-bottom">
               <span>함께 배우고, 만들고, 알립니다.</span>
-              <span aria-hidden="true">✳</span>
+              <span aria-hidden="true">✳︎</span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="ticker" aria-hidden="true">
-        <span>GWANGJU</span><span>✳</span>
-        <span>CONTENT</span><span>✳</span>
-        <span>LOCAL BRAND</span><span>✳</span>
+        <span>GWANGJU</span><span>✳︎</span>
+        <span>CONTENT</span><span>✳︎</span>
+        <span>LOCAL BRAND</span><span>✳︎</span>
         <span>INSTAGRAM</span>
       </div>
     </div>
@@ -884,8 +888,8 @@
         </div>
         <div class="program-intro">
           <figure class="program-photo">
-            <img src="3.jpg" alt="인스타그램의 콘텐츠 판단 기준을 배우며 강사의 설명을 듣는 참가자들" width="3024" height="4032" loading="lazy" decoding="async">
-            <figcaption>좋은 콘텐츠의 기준을 배우고, 우리 사업에 적용하는 수업 현장.</figcaption>
+            <img src="1.png" alt="발표자와 참가자들이 화면을 보며 인스타그램 콘텐츠 기획을 살펴보는 실제 수업 현장" width="1080" height="1920" loading="lazy" decoding="async">
+            <figcaption>대표님들과 콘텐츠의 방향을 함께 살펴보는 수업 현장.</figcaption>
           </figure>
           <div class="program-overview">
             <h3>방향을 찾는 첫 만남부터,<br>직접 만드는 힘을 기르는 과정까지.</h3>
@@ -924,8 +928,12 @@
         <div class="label">02 / OUR MISSION</div>
         <h2>광주 대표님들의<br><span>자립을 돕는다.</span></h2>
         <div class="mission-layout">
-          <p class="mission-lead">내 사업을 이해하고,<br>내 이야기를 만들고,<br>고객에게 직접 알리는 힘.</p>
+          <figure class="mission-photo">
+            <img src="3.jpg" alt="인스타그램의 콘텐츠 판단 기준을 배우며 강사의 설명을 듣는 참가자들" width="3024" height="4032" loading="lazy" decoding="async">
+            <figcaption>좋은 콘텐츠의 기준을 배우고, 우리 사업에 적용하는 시간.</figcaption>
+          </figure>
           <div class="mission-copy">
+            <p class="mission-lead">내 사업을 이해하고,<br>내 이야기를 만들고,<br>고객에게 직접 알리는 힘.</p>
             <p>우리가 생각하는 자립은 단순히 인스타그램 사용법을 배우는 것이 아닙니다.</p>
             <p>내 사업의 강점을 이해하고, 내 이야기를 콘텐츠로 만들고, 고객에게 직접 알릴 수 있는 힘을 가지는 것입니다.</p>
             <p>그래서 광주 인스타 연구소는 단순 제작보다 <strong>대표가 스스로 자신의 미디어를 만들어가는 것</strong>을 중요하게 생각합니다.</p>
