@@ -339,6 +339,22 @@
       letter-spacing: -1px;
     }
 
+    .intro-photo { margin: 28px 0 0; }
+    .intro-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 60%;
+      border-radius: 16px;
+    }
+    .intro-photo figcaption {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     .principles {
       display: flex;
       gap: 12px;
@@ -874,10 +890,16 @@
         </div>
 
         <div class="intro-grid">
-          <div class="intro-statement">
-            화려한 유행보다 우리 가게의 개성.<br>
-            한 번의 게시물보다 꾸준한 소통.<br>
-            숫자 너머에 있는 실제 고객.
+          <div>
+            <div class="intro-statement">
+              화려한 유행보다 우리 가게의 개성.<br>
+              한 번의 게시물보다 꾸준한 소통.<br>
+              숫자 너머에 있는 실제 고객.
+            </div>
+            <figure class="intro-photo">
+              <img src="1.png" alt="발표자와 참가자들이 화면을 보며 인스타그램 콘텐츠 기획을 살펴보는 강의 현장" width="1080" height="1920" loading="lazy" decoding="async">
+              <figcaption>콘텐츠의 방향을 함께 살펴보는 시간.</figcaption>
+            </figure>
           </div>
 
           <div class="intro-text">
