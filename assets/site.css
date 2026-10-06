@@ -1,6 +1,7 @@
+.hero-image { object-position: center 50%; }
 .program-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 44px; }
 .program-photo { margin: 0; }
-.program-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 60%; border-radius: 18px; }
+.program-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 45%; border-radius: 18px; }
 .program-photo figcaption { color: var(--muted); font-size: 13px; margin-top: 12px; }
 .program-overview h3 { font-size: 27px; line-height: 1.5; letter-spacing: -1px; margin: 0 0 20px; }
 .program-overview p { color: var(--muted); }
